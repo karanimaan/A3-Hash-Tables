@@ -1,5 +1,7 @@
-package src;
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.nio.file.*;
 
@@ -52,6 +54,13 @@ class TestHashTable
          System.out.println ("Collisions Threshold Not Met! Collisions = " + h.getCollisions ());
       System.out.println ("Seen data [Hit:Miss]: " + hit1 + ":" + miss1);
       System.out.println ("Unseen data [Hit:Miss]: " + hit2 + ":" + miss2);
+
+      try (BufferedWriter writer = new BufferedWriter(new FileWriter("collisions.txt"))) {
+         writer.write(String.valueOf(h.getCollisions()));
+      }
+      catch (IOException e) {
+         e.printStackTrace();
+      }
    }
 
    public static void main ( String [] args )
