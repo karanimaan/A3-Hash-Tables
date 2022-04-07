@@ -1,0 +1,2 @@
+i, best weights, min collisions
+2271, (1, 1, 1, 1, 2, 5, 1, 4, 4), 29
